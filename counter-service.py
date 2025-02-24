@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import os
-
+#Added this to help know the difference that was made
 app = Flask(__name__)
 
 # Define the path for the counter file to store the data in Docker Volume
