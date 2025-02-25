@@ -78,7 +78,7 @@ jobs:
     - name: Extract repository name
       id: repo-name
       run: |
-        REPO_NAME="$python-docker-cicd-gha"
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
         echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
         echo "::set-output name=repo_name::$REPO_NAME"
 
