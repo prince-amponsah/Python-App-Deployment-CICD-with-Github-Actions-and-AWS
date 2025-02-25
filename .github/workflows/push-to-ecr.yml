@@ -172,7 +172,7 @@ jobs:
         # Add user to the Docker group (to avoid permission issues)
         $SSH_COMMAND "sudo usermod -aG docker ubuntu && newgrp docker"
 
-        # Pull and run the Docker container on EC2
+        # Pull and run the Docker container on Virtual machine
         $SSH_COMMAND "cd /home/ubuntu/docker/ && docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG && docker compose -f docker-compose.yml up -d --force-recreate"
         
         # Cleanup PEM key
