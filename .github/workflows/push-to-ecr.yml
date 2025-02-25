@@ -1,6 +1,7 @@
 name: Build and Push Docker image to AWS ECR
 
 #Specific for the development branch
+#Changes made to let the github repo name match that of ECR
 
 on:
   push:
