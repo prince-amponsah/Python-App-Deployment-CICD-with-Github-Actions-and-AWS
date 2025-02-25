@@ -164,13 +164,14 @@ jobs:
         $SSH_COMMAND "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 773587062517.dkr.ecr.us-west-2.amazonaws.com"
 
         # Ensure the directory exists and has the correct permissions
-        $SSH_COMMAND "sudo mkdir -p /home/***/docker/ && sudo chown -R $EC2_USER:$EC2_USER /home/***/docker/"
+        # $SSH_COMMAND "sudo mkdir -p /home/ubuntu/docker/ && sudo chown -R $EC2_USER:$EC2_USER /home/ubuntu/docker/"
+        $SSH_COMMAND "sudo mkdir -p /home/ubuntu/docker/ && sudo chown -R $EC2_USER:$EC2_USER /home/ubuntu/docker/"
         
         # Copy docker-compose.yml to a temporary location
         $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/tmp/
         
         # Move it to the correct location and set correct ownership
-        $SSH_COMMAND "sudo mv /tmp/docker-compose.yml /home/***/docker/ && sudo chown $EC2_USER:$EC2_USER /home/***/docker/docker-compose.yml"
+        $SSH_COMMAND "sudo mv /tmp/docker-compose.yml /home/ubuntu/docker/ && sudo chown $EC2_USER:$EC2_USER /home/ubuntu/docker/docker-compose.yml"
 
 
         # Ensure the directory exists
