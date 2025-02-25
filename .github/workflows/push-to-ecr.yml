@@ -171,36 +171,7 @@ jobs:
         
         # Add user to the Docker group (to avoid permission issues)
         $SSH_COMMAND "sudo usermod -aG docker ubuntu && newgrp docker"
-        
-        # Pull and run the Docker container on EC2
-        $SSH_COMMAND "cd /home/ubuntu/docker/ && sudo docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG && sudo docker compose -f docker-compose.yml up -d --force-recreate"
 
-
-
-        
-        #Login to Docker registry
-        # $SSH_COMMAND "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 773587062517.dkr.ecr.us-west-2.amazonaws.com"
-
-        # Ensure the directory exists and has the correct permissions
-        # $SSH_COMMAND "sudo mkdir -p /home/ubuntu/docker/ && sudo chown -R $EC2_USER:$EC2_USER /home/ubuntu/docker/"
-        # $SSH_COMMAND "sudo mkdir -p /home/ubuntu/docker/ && sudo chown -R $EC2_USER:$EC2_USER /home/ubuntu/docker/"
-        
-        # Copy docker-compose.yml to a temporary location
-        # $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/tmp/
-        
-        # Move it to the correct location and set correct ownership
-        $SSH_COMMAND "sudo mv /tmp/docker-compose.yml /home/ubuntu/docker/ && sudo chown $EC2_USER:$EC2_USER /home/ubuntu/docker/docker-compose.yml"
-
-
-        # Ensure the directory exists
-        # $SSH_COMMAND "sudo mkdir -p /home/***/docker/"
-        
-        # Copy docker-compose.yml to EC2 server
-        # $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/home/***/docker/
-
-        # Copy docker-compose.yml to EC2 server
-        # $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/home/ubuntu/docker/
-        
         # Pull and run the Docker container on EC2
         $SSH_COMMAND "cd /home/ubuntu/docker/ && docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG && docker compose -f docker-compose.yml up -d --force-recreate"
         
