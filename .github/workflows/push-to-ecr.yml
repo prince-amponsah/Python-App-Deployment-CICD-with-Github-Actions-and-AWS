@@ -164,7 +164,7 @@ jobs:
         $SSH_COMMAND "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 773587062517.dkr.ecr.us-west-2.amazonaws.com"
 
         # Ensure the directory exists
-        $SSH_COMMAND "mkdir -p /home/***/docker/"
+        $SSH_COMMAND "sudo mkdir -p /home/***/docker/"
         
         # Copy docker-compose.yml to EC2 server
         $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/home/***/docker/
