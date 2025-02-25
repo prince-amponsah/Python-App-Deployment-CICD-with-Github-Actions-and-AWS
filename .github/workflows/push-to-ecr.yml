@@ -167,7 +167,7 @@ jobs:
         $SSH_COMMAND "sudo mkdir -p /home/***/docker/"
         
         # Copy docker-compose.yml to EC2 server
-        $SCP_COMMAND sudo docker-compose.yml $EC2_USER@$EC2_HOST:/home/***/docker/
+        $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/home/***/docker/
 
         # Copy docker-compose.yml to EC2 server
         # $SCP_COMMAND docker-compose.yml $EC2_USER@$EC2_HOST:/home/ubuntu/docker/
