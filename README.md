@@ -1,4 +1,4 @@
-# counter-service-exercise
+# Python Counter Service App
 
 ![python-app-ezgif com-webp-to-jpg-converter](https://github.com/user-attachments/assets/ceb9266a-ba5e-4c70-9310-41203b482987)
 
