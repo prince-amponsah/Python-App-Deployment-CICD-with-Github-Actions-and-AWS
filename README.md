@@ -5,8 +5,6 @@ Python service called "counter-service."
 
 It maintains a web page with a counter for the number of POST requests it has served and return it for every GET request it gets.
 
---------------------------------------------------------------------
-Detailed pipeline overview here: [Medium](https://medium.com/devops-technical-notes-and-manuals/devops-example-project-for-your-resume-198e34d874b4).
 
 ---------------------------------------------------------------------
 ### Building and running your application
@@ -31,3 +29,6 @@ docs for more detail on building and pushing.
 
 ### References
 * [Docker's Python guide](https://docs.docker.com/language/python/)
+
+* Credit: Andrey Byhalenko
+* Detailed pipeline overview here: [Medium](https://medium.com/devops-technical-notes-and-manuals/devops-example-project-for-your-resume-198e34d874b4).
